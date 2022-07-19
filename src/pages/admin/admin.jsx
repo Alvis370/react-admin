@@ -16,7 +16,6 @@ import Pie from '../charts/pie';
 const { Footer, Sider, Content } = Layout;
 
 export default function Admin() {
-
   const history = useHistory();
 
   function getUser() {
@@ -29,6 +28,14 @@ export default function Admin() {
     return user.username;
   }
 
+  return (
+    <div style={{height: '100%'}}>
+      {getUser() && <AdminLayout />}
+    </div>
+  )
+}
+
+function AdminLayout() {
   return (
     <Layout style={{ height: '100%' }}>
       <Sider>

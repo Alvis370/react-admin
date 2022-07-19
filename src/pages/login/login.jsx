@@ -23,7 +23,7 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div style={{height: '100%'}}>
       {getUser() && <LoginForm />}
     </div>
   )
