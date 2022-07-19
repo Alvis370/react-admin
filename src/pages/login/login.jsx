@@ -1,23 +1,63 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, message } from 'antd';
+import { useHistory } from "react-router-dom";
 import './login.less';
 import logo from './images/logo.png';
+import { reqLogin } from '../../api';
+import memoryUtils from '../../utils/memoryUtils';
+import storageUtils from '../../utils/storageUtils';
 
 export default function Login() {
+  const history = useHistory();
 
+  function getUser() {
+    const user = memoryUtils.user;
 
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    if (user && user._id) {
+      history.replace("/");
+      return false;
+    }
 
-    //ajax
+    return true;
+  }
+
+  return (
+    <div>
+      {getUser() && <LoginForm />}
+    </div>
+  )
+}
+
+function LoginForm() {
+  const history = useHistory();
+
+  const onFinish = async (values) => {
+    const { username, password } = values;
+    const response = await reqLogin(username, password);
+
+    const result = response.data;
+
+    if (result.status === 0) {
+      //Login successfully
+      message.success('Login successfully!');
+
+      const user = result.data;
+      memoryUtils.user = user; // 保存在内存中
+      storageUtils.saveUser(user); //save to localStorage
+
+      history.replace("/");
+    } else {
+      //Login failed 
+      message.error(result.msg);
+    }
   };
 
   return (
     <div className="login">
       <header className="login-header">
         <img src={logo} alt="logo img" />
-        <h1>React项目：后台管理系统</h1>
+        <h1>React: Backend Management System</h1>
       </header>
 
       <section className="login-content">
@@ -27,8 +67,8 @@ export default function Login() {
           className="login-form"
           initialValues={{
             remember: true,
-            username: 'Admin',
-            password: 'Admin'
+            username: 'admin',
+            password: 'admin'
           }}
           onFinish={onFinish}
         >
@@ -87,5 +127,5 @@ export default function Login() {
         </Form>
       </section>
     </div>
-  )
+  );
 }
