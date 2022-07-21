@@ -13,14 +13,10 @@ import {
 import { Link } from 'react-router-dom';
 
 
-function getItem(label, key, icon, children, type) {
+function getItem(label, key, icon, children, title) {
     //返回items数组中的对象
     return {
-        key,
-        icon,
-        children,
-        label,
-        type,
+        label, key, icon, children, title
     };
 }
 
@@ -32,7 +28,9 @@ const menuList = [
             </Link>
         ),
         '/home',
-        <HomeOutlined />
+        <HomeOutlined />,
+        undefined,
+        '首页' 
     ),
     getItem('商品', 'sub1', <AppstoreOutlined />, [
         getItem(
@@ -42,7 +40,9 @@ const menuList = [
                 </Link>
             ),
             '/category',
-            <UnorderedListOutlined />
+            <UnorderedListOutlined />,
+            undefined,
+            '品类管理'
         ),
         getItem(
             (
@@ -51,7 +51,9 @@ const menuList = [
                 </Link>
             ),
             '/product',
-            <ToolOutlined />
+            <ToolOutlined />,
+            undefined,
+            '商品管理'
         )
     ]),
     getItem(
@@ -61,7 +63,9 @@ const menuList = [
             </Link>
         ),
         '/user',
-        <UserOutlined />
+        <UserOutlined />,
+        undefined,
+        '用户管理'
     ),
     getItem(
         (
@@ -70,7 +74,9 @@ const menuList = [
             </Link>
         ),
         '/role',
-        <SafetyCertificateOutlined />
+        <SafetyCertificateOutlined />,
+        undefined,
+        '角色管理'
     ),
     getItem('图形图表', 'sub2', <AreaChartOutlined />, [
         getItem(
@@ -80,7 +86,9 @@ const menuList = [
                 </Link>
             ),
             '/charts/bar',
-            <BarChartOutlined />
+            <BarChartOutlined />,
+            undefined,
+            '柱形图'
         ),
         getItem(
             (
@@ -89,7 +97,9 @@ const menuList = [
                 </Link>
             ),
             '/charts/line',
-            <LineChartOutlined />
+            <LineChartOutlined />,
+            undefined,
+            '折线图'
         ),
         getItem(
             (
@@ -98,7 +108,9 @@ const menuList = [
                 </Link>
             ),
             '/charts/pie',
-            <PieChartOutlined />
+            <PieChartOutlined />,
+            undefined,
+            '饼图'
         )
     ])
 ];
