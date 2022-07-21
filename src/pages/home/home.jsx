@@ -1,7 +1,10 @@
 import React from 'react';
+import './home.less';
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div className="home">
+      Home
+    </div>
   )
 }

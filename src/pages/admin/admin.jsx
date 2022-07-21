@@ -57,7 +57,7 @@ function AdminLayout() {
             <Redirect to="/home" />
           </Switch>
         </Content>
-        <Footer style={{ textAlign: 'center', color: '#ccc' }}>Use Chrome broswer to get optimized experience.</Footer>
+        <Footer style={{ textAlign: 'center', color: '#ccc' }}>Use Google Chrome to get optimized experience.</Footer>
       </Layout>
 
     </Layout>
