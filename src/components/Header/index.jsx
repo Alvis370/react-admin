@@ -1,19 +1,19 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { Modal, Button } from 'antd';
+import { Modal, Button, message } from 'antd';
 import './index.less';
-// import { reqWeather } from '../../api/index';
+import { reqWeather } from '../../api/index';
 import { formatDate } from '../../utils/dateUtils';
 import memoryUtils from '../../utils/memoryUtils';
 import storageUtils from '../../utils/storageUtils';
 import menuList from '../../config/menuConfig';
 
-export default function Header() {
+const Header = () => {
 
     const [currentTime, setCurrentTime] = React.useState(formatDate(Date.now()));
     // const [ dayPicUrl, setDayPicUrl ] = React.useState();
-    // const [ weather, setWeather ] = React.useState();
+    const [ weather, setWeather ] = React.useState();
     const [ timeTag, setTimeTag ] = React.useState();
 
     const username = memoryUtils.user.username;
@@ -28,19 +28,22 @@ export default function Header() {
         }, 1000);
 
         setTimeTag(tag);
+
+        getWeather();
+        
         return () => {
             // Anything in here is fired on component unmount.
             clearInterval(timeTag);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    // async function getWeather() {    
-    //     const { dayPicUrl, weather } = await reqWeather();
-    //     setDayPicUrl(dayPicUrl);
-    //     setWeather(weather);
-    // }
+    async function getWeather() {    
+        const { data } = await reqWeather();
+        setWeather(data);
+    }
 
-    function getTitle() {
+    const getTitle = () => {
         const path = location.pathname;
         let title = '';
 
@@ -59,7 +62,7 @@ export default function Header() {
         return title;
     }
 
-    function showConfirm() {
+    const showConfirm = () => {
         Modal.confirm({
             title: 'Confirm Logout?',
             icon: <ExclamationCircleOutlined />,
@@ -84,9 +87,11 @@ export default function Header() {
                 <div className="header-bottom-right">
                     <span>{currentTime}</span>
                     <img src="http://api.map.baidu.com/images/weather/day/qing.png" alt="weather" />
-                    <span>Sunny</span>
+                    <span>{weather}</span>
                 </div>
             </div>
         </div>
     )
 }
+
+export default Header;

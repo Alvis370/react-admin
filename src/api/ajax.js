@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { message } from 'antd';
 
-// const BASE_URL = 'http://localhost:5000';
-const BASE_URL = '';
+const BASE_URL = 'http://localhost:5000';
 
 export default function ajax(url, data = {}, method) {
     // console.log('url', url);
