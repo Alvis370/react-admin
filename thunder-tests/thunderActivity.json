@@ -166,26 +166,6 @@
     "tests": []
   },
   {
-    "_id": "211fb69e-3c72-4d8c-84f6-d9296a12b90a",
-    "colId": "history",
-    "containerId": "",
-    "name": "https://localhost:5000/mamage/category/list?parentId=0",
-    "url": "https://localhost:5000/mamage/category/list?parentId=0",
-    "method": "GET",
-    "sortNum": 0,
-    "created": "2022-07-22T17:59:26.523Z",
-    "modified": "2022-07-22T17:59:26.561Z",
-    "headers": [],
-    "params": [
-      {
-        "name": "parentId",
-        "value": "0",
-        "isPath": false
-      }
-    ],
-    "tests": []
-  },
-  {
     "_id": "d01321f7-049a-49ad-8fe1-b0d08342df9f",
     "colId": "history",
     "containerId": "",
@@ -194,7 +174,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-07-22T17:59:42.548Z",
-    "modified": "2022-07-22T17:59:42.566Z",
+    "modified": "2022-07-23T00:57:03.988Z",
     "headers": [],
     "params": [
       {
@@ -210,16 +190,41 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:5000/manage/category/list?parentId=0",
-    "url": "http://localhost:5000/manage/category/list?parentId=5e12b8bce31bb727e4b0e348",
+    "url": "http://localhost:5000/manage/category/list?parentId=0",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-07-22T18:00:42.189Z",
-    "modified": "2022-07-22T20:20:26.680Z",
+    "modified": "2022-07-23T01:15:29.962Z",
     "headers": [],
     "params": [
       {
         "name": "parentId",
-        "value": "5e12b8bce31bb727e4b0e348",
+        "value": "0",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "0564f274-bd65-4020-a745-2fc6016513ff",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/add?categoryName=67778t68&parentId=0",
+    "url": "http://localhost:5000/manage/category/add?categoryName=67778t68&parentId=0",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-23T00:56:35.540Z",
+    "modified": "2022-07-23T00:56:43.844Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryName",
+        "value": "67778t68",
+        "isPath": false
+      },
+      {
+        "name": "parentId",
+        "value": "0",
         "isPath": false
       }
     ],

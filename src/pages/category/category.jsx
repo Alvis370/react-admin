@@ -80,10 +80,8 @@ export default function Category() {
   }
 
   const showSubCategory = (category) => {
-    const { $oid } = JSON.parse(category._id);
-
     //setState是异步的
-    setParentId($oid);
+    setParentId(category._id);
     setParentName(category.name);
   }
 
@@ -110,8 +108,7 @@ export default function Category() {
   const onEditCategoryModalOpen = (category) => {
     form2.setFieldsValue({ categoryName: category.name });
 
-    const { $oid } = JSON.parse(category._id);
-    setCategoryId($oid);
+    setCategoryId(category._id);
 
     setEditCategoryVisible(true);
   }
@@ -122,14 +119,14 @@ export default function Category() {
   }
 
   const onEditCategoryOK = async (values) => {
-    console.log(values)
-    // let res = await reqUpdateCategory(values.categoryName, categoryId);
+    let res = await reqUpdateCategory(values.categoryName, categoryId);
+    console.log(res);
 
-    // if (res?.status === 0) {
-    //   getCategory();
-    // } else {
-    //   message.error('Get category list failed!');
-    // }
+    if (res?.status === 0) {
+      getCategory();
+    } else {
+      message.error('Get category list failed!');
+    }
 
     form2.resetFields();
 
@@ -180,8 +177,7 @@ function AddForm(props) {
             <Select style={{ width: "100%" }}>
               <Option key='0' value='0'>Category #1</Option>
               {category.map(item => {
-                const { $oid } = JSON.parse(item._id);
-                return (<Option key={$oid} value={$oid}>{item.name}</Option>)
+                return (<Option key={item._id} value={item._id}>{item.name}</Option>)
               })}
             </Select>
           </Form.Item>
