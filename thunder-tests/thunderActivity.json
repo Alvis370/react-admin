@@ -106,7 +106,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-07-21T17:33:53.761Z",
-    "modified": "2022-07-22T01:59:36.793Z",
+    "modified": "2022-07-22T16:49:07.143Z",
     "headers": [],
     "params": [
       {
@@ -163,6 +163,66 @@
     "modified": "2022-07-22T03:54:01.632Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "211fb69e-3c72-4d8c-84f6-d9296a12b90a",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:5000/mamage/category/list?parentId=0",
+    "url": "https://localhost:5000/mamage/category/list?parentId=0",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-22T17:59:26.523Z",
+    "modified": "2022-07-22T17:59:26.561Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "parentId",
+        "value": "0",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "d01321f7-049a-49ad-8fe1-b0d08342df9f",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:5000/manage/category/list?parentId=0",
+    "url": "https://localhost:5000/manage/category/list?parentId=0",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-22T17:59:42.548Z",
+    "modified": "2022-07-22T17:59:42.566Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "parentId",
+        "value": "0",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "10e1e976-0491-4241-bde1-0a0dc521a3d1",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/list?parentId=0",
+    "url": "http://localhost:5000/manage/category/list?parentId=5e12b8bce31bb727e4b0e348",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-22T18:00:42.189Z",
+    "modified": "2022-07-22T20:20:26.680Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "parentId",
+        "value": "5e12b8bce31bb727e4b0e348",
+        "isPath": false
+      }
+    ],
     "tests": []
   }
 ]

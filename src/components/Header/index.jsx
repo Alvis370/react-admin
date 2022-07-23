@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { Modal, Button, message } from 'antd';
+import { Modal, Button } from 'antd';
 import './index.less';
 import { reqWeather } from '../../api/index';
 import { formatDate } from '../../utils/dateUtils';
@@ -13,7 +13,7 @@ const Header = () => {
 
     const [currentTime, setCurrentTime] = React.useState(formatDate(Date.now()));
     // const [ dayPicUrl, setDayPicUrl ] = React.useState();
-    const [ weather, setWeather ] = React.useState();
+    const [ weather, setWeather ] = React.useState('Sunny');
     const [ timeTag, setTimeTag ] = React.useState();
 
     const username = memoryUtils.user.username;
@@ -39,8 +39,10 @@ const Header = () => {
     }, [])
 
     async function getWeather() {    
-        const { data } = await reqWeather();
-        setWeather(data);
+        // const { data } = await reqWeather();
+        // setWeather(data?.weather);
+
+        setWeather('Sunny');
     }
 
     const getTitle = () => {

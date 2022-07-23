@@ -34,9 +34,7 @@ function LoginForm() {
 
   const onFinish = async (values) => {
     const { username, password } = values;
-    const response = await reqLogin(username, password);
-
-    const result = response.data;
+    const result = await reqLogin(username, password);
 
     if (result.status === 0) {
       //Login successfully

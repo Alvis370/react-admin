@@ -23,7 +23,7 @@ function getItem(label, key, icon, children, title) {
 const menuList = [
     getItem(
         (
-            <Link to='/home'>
+            <Link replace to='/home'>
                 首页
             </Link>
         ),
@@ -35,7 +35,7 @@ const menuList = [
     getItem('商品', 'sub1', <AppstoreOutlined />, [
         getItem(
             (
-                <Link to='/category'>
+                <Link replace to='/category'>
                     品类管理
                 </Link>
             ),
@@ -46,7 +46,7 @@ const menuList = [
         ),
         getItem(
             (
-                <Link to='/product'>
+                <Link replace to='/product'>
                     商品管理
                 </Link>
             ),
@@ -58,7 +58,7 @@ const menuList = [
     ]),
     getItem(
         (
-            <Link to='/user'>
+            <Link replace to='/user'>
                 用户管理
             </Link>
         ),
@@ -69,7 +69,7 @@ const menuList = [
     ),
     getItem(
         (
-            <Link to='/role'>
+            <Link replace to='/role'>
                 角色管理
             </Link>
         ),
@@ -81,7 +81,7 @@ const menuList = [
     getItem('图形图表', 'sub2', <AreaChartOutlined />, [
         getItem(
             (
-                <Link to='/charts/bar'>
+                <Link replace to='/charts/bar'>
                     柱形图
                 </Link>
             ),
@@ -92,7 +92,7 @@ const menuList = [
         ),
         getItem(
             (
-                <Link to='/charts/line'>
+                <Link replace to='/charts/line'>
                     折线图
                 </Link>
             ),
@@ -103,7 +103,7 @@ const menuList = [
         ),
         getItem(
             (
-                <Link to='/charts/pie'>
+                <Link replace to='/charts/pie'>
                     饼图
                 </Link>
             ),
