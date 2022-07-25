@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Table, Modal, Form, Select, Input, Button, message } from 'antd';
 import { PlusOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
-import { reqCategory, reqAddCategory, reqUpdateCategory } from '../../api';
+import { reqCategorys, reqAddCategory, reqUpdateCategory } from '../../api';
 
 export default function Category() {
 
@@ -51,7 +51,7 @@ export default function Category() {
   ];
 
   React.useEffect(() => {
-    if (category === []) {
+    if (category.length === 0) {
       getCategory();
     }
 
@@ -63,13 +63,16 @@ export default function Category() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [parentId])
 
-  const getCategory = async () => {
+  const getCategory = async (parentId_p) => {
+    //parentId: 如果没有指定，则根据状态中的parentId发请求，否则根据指定的parentId发请求
+    parentId_p = parentId_p || parentId;
+
     setIsLoading(true);
-    let res = await reqCategory(parentId);
+    let res = await reqCategorys(parentId_p);
     setIsLoading(false);
 
     if (res?.status === 0) {
-      if (parentId === '0') {
+      if (parentId_p === '0') {
         setCategory(res.data);
       } else {
         setSubCategory(res.data);
@@ -95,7 +98,13 @@ export default function Category() {
     console.log(res);
 
     if (res?.status === 0) {
-      getCategory();
+      if (values.parentId === parentId) {
+        //添加的分类就是当前的分类
+        getCategory();
+      } else if (parentId === '0') {
+        //在二级分类列表下添加一级分类，重新获取一级分类列表，但不显示一级分类列表
+        getCategory(parentId);//update main category
+      }
     } else {
       message.error(res.msg);
     }
@@ -191,7 +200,7 @@ function AddForm(props) {
           () => ({
             validator(_, value) {
               if (!value) {
-                return Promise.reject(new Error('Name can not be empty!'));
+                return Promise.reject(new Error('Category can not be empty!'));
               } else {
                 return Promise.resolve();
               }

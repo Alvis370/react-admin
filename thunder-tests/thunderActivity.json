@@ -229,5 +229,180 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "e93a513c-2f9b-45fc-b6c0-c9e0f328661a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/product/list?pageNum=1&pageSize=2",
+    "url": "http://localhost:5000/manage/product/list?pageNum=1&pageSize=2",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T07:44:11.296Z",
+    "modified": "2022-07-25T13:45:49.522Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "pageNum",
+        "value": "1",
+        "isPath": false
+      },
+      {
+        "name": "pageSize",
+        "value": "2",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "b5451013-8826-4e4c-a419-f54b795f11a5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=5e12b8bce31bb727e4b0e348",
+    "url": "http://localhost:5000/manage/category/info?categoryId=5e12b8bce31bb727e4b0e348",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:12:30.932Z",
+    "modified": "2022-07-25T12:18:57.501Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "5e12b8bce31bb727e4b0e348",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "a3f5a432-60a6-4f2b-8fa4-f8110e223865",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=5fc74b650dd9b10798413162",
+    "url": "http://localhost:5000/manage/category/info?categoryId=5fc74b650dd9b10798413162",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:19:56.525Z",
+    "modified": "2022-07-25T12:30:18.159Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "5fc74b650dd9b10798413162",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "4f094f6a-c709-453e-8c4c-ea3255f1739c",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=62db4c0fa482462b10758c36",
+    "url": "http://localhost:5000/manage/category/info?categoryId=62db4c0fa482462b10758c36",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:20:05.637Z",
+    "modified": "2022-07-25T12:28:44.718Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "62db4c0fa482462b10758c36",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "9ac227b9-26df-48a4-a161-6124d113453a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=62db4c22a482462b10758c37",
+    "url": "http://localhost:5000/manage/category/info?categoryId=62db4c22a482462b10758c37",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:20:28.494Z",
+    "modified": "2022-07-25T12:20:28.514Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "62db4c22a482462b10758c37",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "c1a82a85-81ab-4850-83f9-6a99284cc765",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=5e13467e3ed02518b4db0cd8",
+    "url": "http://localhost:5000/manage/category/info?categoryId=5e13467e3ed02518b4db0cd8",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:21:24.565Z",
+    "modified": "2022-07-25T12:25:43.861Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "5e13467e3ed02518b4db0cd8",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "f6e745bc-ac4a-4102-b21c-10418101749a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/product/updateStatus?productId=5e12b97de31bb727e4b0e349&status=2",
+    "url": "http://localhost:5000/manage/product/updateStatus?productId=5e12b97de31bb727e4b0e349&status=2",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-25T12:41:09.472Z",
+    "modified": "2022-07-25T12:41:09.507Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "productId",
+        "value": "5e12b97de31bb727e4b0e349",
+        "isPath": false
+      },
+      {
+        "name": "status",
+        "value": "2",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "81183196-28bb-433b-bc0c-bf0ad61bae49",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/product/updateStatus?productId=5e12b97de31bb727e4b0e349&status=1",
+    "url": "http://localhost:5000/manage/product/updateStatus?productId=5e12b97de31bb727e4b0e349&status=1",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-25T13:11:08.829Z",
+    "modified": "2022-07-25T13:13:02.469Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "productId",
+        "value": "5e12b97de31bb727e4b0e349",
+        "isPath": false
+      },
+      {
+        "name": "status",
+        "value": "1",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]

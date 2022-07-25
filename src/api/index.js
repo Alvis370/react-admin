@@ -10,11 +10,23 @@ export const reqLogin = (username, password) => ajax('/login', { username, passw
 
 export const reqAddUser = (user) => ajax('/manage/user/add', user, POST);
 
-export const reqCategory = (parentId) => ajax('/manage/category/list', { parentId }, GET);
+export const reqCategorys = (parentId) => ajax('/manage/category/list', { parentId }, GET);
 
 export const reqAddCategory = (categoryName, parentId) => ajax('/manage/category/add', { categoryName, parentId }, POST);
 
 export const reqUpdateCategory = (categoryName, categoryId) => ajax('/manage/category/update', { categoryName, categoryId }, POST);
+
+export const reqCategory = (categoryId) => ajax('/manage/category/info', { categoryId }, GET);
+
+export const reqUpdateStatus = (productId, status) => ajax('/manage/product/updateStatus', { productId, status }, POST);
+
+export const reqProducts = (pageNum, pageSize) => ajax('/manage/product/list', { pageNum, pageSize }, GET);
+
+export const reqSearchProducts = ({ pageNum, pageSize, searchName, searchType }) => ajax('/manage/product/search', { 
+    pageNum, 
+    pageSize,
+    [searchType]: searchName //searchType: productName / productDesc
+}, GET);
 
 export const reqWeather = () => ajax('/weather', {}, GET);
 
