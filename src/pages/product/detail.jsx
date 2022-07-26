@@ -5,7 +5,7 @@ import { ArrowLeftOutlined } from '@ant-design/icons';
 import { BASE_IMG_URL } from '../../constants';
 import { reqCategory } from '../../api';
 
-const Item = List.Item;
+const { Item } = List;
 
 export default function ProductDetail() {
 
@@ -79,7 +79,7 @@ export default function ProductDetail() {
                     </span>
                 </Item>
                 <Item className='product-detail'>
-                    <span className='product-detail-left'>Detailed Description: </span>
+                    <span className='product-detail-left'>Detail: </span>
                     <span dangerouslySetInnerHTML={{ __html: state.detail }}></span>
                 </Item>
             </List>

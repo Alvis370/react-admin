@@ -42,7 +42,13 @@ export default function ProductHome() {
     );
 
     const extra = (
-        <Button type="primary" icon={<PlusOutlined />} >Add Product</Button>
+        <Button
+            type="primary"
+            icon={<PlusOutlined />}
+            onClick={() => history.push('/product/addupdate')}
+        >
+            Add Product
+        </Button>
     );
 
     const columns = [
@@ -64,10 +70,10 @@ export default function ProductHome() {
             // dataIndex: 'status',
             width: 200,
             render: (product) => {
-                const {status, _id} = product;
+                const { status, _id } = product;
                 return (
                     <>
-                        <Button type="primary" onClick={() => updateStatus(_id, status===1?2:1)}>{status === 1 ? 'Remove' : 'Put in Stock'}</Button>
+                        <Button type="primary" onClick={() => updateStatus(_id, status === 1 ? 2 : 1)}>{status === 1 ? 'Remove' : 'Put in Stock'}</Button>
                         <br />
                         <span>{status === 1 ? 'On Sale' : 'Not avaliable'}</span>
                     </>
@@ -81,7 +87,7 @@ export default function ProductHome() {
                 return (
                     <>
                         <Button type="link" onClick={() => history.push('/product/detail', product)}>DETAIL</Button>
-                        <Button type="link" onClick={() => { }}>EDIT</Button>
+                        <Button type="link" onClick={() => history.push('/product/addupdate', product)}>EDIT</Button>
                     </>
                 );
             }
@@ -92,14 +98,14 @@ export default function ProductHome() {
         setPageNum(pageNum);
         let res;
         setIsLoading(true);
-        if(searchName){
+        if (searchName) {
             res = await reqSearchProducts({
                 pageNum,
                 pageSize: PAGE_SIZE,
                 searchName,
                 searchType
             });
-        }else{
+        } else {
             res = await reqProducts(pageNum, PAGE_SIZE);
         }
         setIsLoading(false);
@@ -116,7 +122,7 @@ export default function ProductHome() {
     const updateStatus = async (productId, status) => {
         let res = await reqUpdateStatus(productId, status);
 
-        if(res.status === 0){
+        if (res.status === 0) {
             message.success('Update product successfully!');
             getProducts(pageNum);
 
