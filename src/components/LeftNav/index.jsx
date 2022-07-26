@@ -7,19 +7,27 @@ import menuConfig from '../../config/menuConfig';
 
 export default function LeftNav() {
     const location = useLocation();
-    const path = location.pathname;
+    let path = location.pathname;
 
-    function getOpenKey(){
+    const getOpenKey = () => {
         let openKey = '';
 
         menuConfig.map(item => {
-            if (item.children && item.children.find(cItem => cItem.key === path)) {
+            if (item.children && item.children.find(cItem => path.indexOf(cItem.key) === 0)) {
                 openKey = item.key;
             }
             return undefined;
         });
     
         return openKey;
+    }
+
+    const getPorperPath = () => {
+        if(path.indexOf('/product') === 0){
+            path = '/product';
+        }
+
+        return path;
     }
 
     return (
@@ -30,7 +38,7 @@ export default function LeftNav() {
             </Link>
 
             <Menu
-                selectedKeys={[path]}
+                selectedKeys={[getPorperPath()]}
                 defaultOpenKeys={[getOpenKey()]}
                 mode="inline"
                 theme="dark"
