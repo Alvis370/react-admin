@@ -190,19 +190,24 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:5000/manage/category/list?parentId=0",
-    "url": "http://localhost:5000/manage/category/list?parentId=00000d0005e12b8bce31bb72",
-    "method": "GET",
+    "url": "http://localhost:5000/manage/img/upload",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-07-22T18:00:42.189Z",
-    "modified": "2022-07-26T13:32:37.920Z",
+    "modified": "2022-07-27T13:45:43.771Z",
     "headers": [],
-    "params": [
-      {
-        "name": "parentId",
-        "value": "00000d0005e12b8bce31bb72",
-        "isPath": false
-      }
-    ],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [],
+      "files": [
+        {
+          "name": "image",
+          "value": "..\\..\\..\\Pictures\\Saved Pictures\\avater.jpg"
+        }
+      ]
+    },
     "tests": []
   },
   {

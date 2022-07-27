@@ -28,6 +28,8 @@ export const reqSearchProducts = ({ pageNum, pageSize, searchName, searchType })
     [searchType]: searchName //searchType: productName / productDesc
 }, GET);
 
+export const reqDeleteImg = (name) => ajax('/manage/img/delete', { name }, POST);
+
 export const reqWeather = () => ajax('/weather', {}, GET);
 
 //json请求的接口请求函数

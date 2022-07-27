@@ -1,8 +1,9 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { Card, Form, Input, Cascader, Upload, Button, message } from 'antd';
+import { Card, Form, Input, Cascader, Button, message } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { reqCategorys } from '../../api';
+import PicturesWall from './pictures-wall';
 
 const { Item } = Form;
 const { TextArea } = Input;
@@ -11,6 +12,8 @@ export default function ProductAddUpdate() {
 
     const [form] = Form.useForm();
     const [options, setOptions] = React.useState([]);
+
+    const imgListRef = React.createRef();
 
     const history = useHistory();
     const state = useLocation().state || {};
@@ -116,6 +119,11 @@ export default function ProductAddUpdate() {
     );
 
     const onFinish = async (values) => {
+        const { current } = imgListRef;
+        const imgArr = current.fileList.map(item => {
+            return item.name;
+        });
+        console.log(imgArr);
         console.log(values);
     }
 
@@ -138,7 +146,6 @@ export default function ProductAddUpdate() {
                     desc: state.desc,
                     price: state.price,
                     category: state.pCategoryId === '0' ? [state.categoryId] : [state.pCategoryId, state.categoryId],
-                    image: state.imgs,
                     detail: state.detail,
                 }}
                 onFinish={onFinish}
@@ -207,7 +214,7 @@ export default function ProductAddUpdate() {
                     <Cascader options={options} loadData={loadData} changeOnSelect />
                 </Item>
                 <Item name='image' label='Image'>
-                    <Input placeholder='Input Product Image' />
+                    <PicturesWall imgList={state.imgs} ref={imgListRef}/>
                 </Item>
                 <Item name='detail' label='Detail'>
                     <Input placeholder='Input Product Detail' />
