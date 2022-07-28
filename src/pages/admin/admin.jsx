@@ -29,7 +29,7 @@ export default function Admin() {
   }
 
   return (
-    <div style={{height: '100%'}}>
+    <div style={{ minHeight: '100%' }}>
       {getUser() && <AdminLayout />}
     </div>
   )
@@ -37,7 +37,7 @@ export default function Admin() {
 
 function AdminLayout() {
   return (
-    <Layout style={{ height: '100%' }}>
+    <Layout>
       <Sider>
         <LeftNav />
       </ Sider>
