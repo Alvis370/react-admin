@@ -3,6 +3,7 @@ import { Card, Table, Modal, Form, Select, Input, Button, message } from 'antd';
 import { PlusOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import { reqCategorys, reqAddCategory, reqUpdateCategory } from '../../api';
+import { formItemLayout } from '../../constants';
 
 export default function Category() {
 
@@ -175,12 +176,16 @@ function AddForm(props) {
   const { form, onFinish, id, name, category } = props;
 
   return (
-    <Form form={form} onFinish={onFinish}>
+    <Form
+      form={form}
+      {...formItemLayout}
+      onFinish={onFinish}
+    >
       {id === 'parentId' ? (
         <>
-          Type:<br />
           <Form.Item
             name={id}
+            label='Type'
             initialValue='0'
           >
             <Select style={{ width: "100%" }}>
@@ -193,9 +198,9 @@ function AddForm(props) {
         </>
       ) : null}
 
-      Name:<br />
       <Form.Item
         name={name}
+        label='Name'
         rules={[
           () => ({
             validator(_, value) {

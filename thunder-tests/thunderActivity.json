@@ -409,5 +409,19 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "45e91e77-1b71-4c98-9f42-a88f045218fa",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/role/list",
+    "url": "http://localhost:5000/manage/role/list",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-28T19:50:08.533Z",
+    "modified": "2022-07-28T19:50:08.638Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
