@@ -2,8 +2,9 @@ import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Card, Form, Input, Cascader, Button, message } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { reqCategorys } from '../../api';
+import { reqCategorys, reqAdOrUpdatedProduct } from '../../api';
 import PicturesWall from './pictures-wall';
+import RichTextEditor from './rich-text-editor';
 
 const { Item } = Form;
 const { TextArea } = Input;
@@ -14,6 +15,7 @@ export default function ProductAddUpdate() {
     const [options, setOptions] = React.useState([]);
 
     const imgListRef = React.createRef();
+    const editorRef = React.createRef();
 
     const history = useHistory();
     const state = useLocation().state || {};
@@ -61,8 +63,8 @@ export default function ProductAddUpdate() {
 
                     if (targetOption !== undefined && childOptions.length > 0) {
                         targetOption.children = childOptions;
-                    } 
-                }else {
+                    }
+                } else {
                     message.error('Get category list failed!');
                 }
             }
@@ -119,12 +121,39 @@ export default function ProductAddUpdate() {
     );
 
     const onFinish = async (values) => {
-        const { current } = imgListRef;
-        const imgArr = current.fileList.map(item => {
+        const imgs = imgListRef.current.fileList.map(item => {
             return item.name;
         });
-        console.log(imgArr);
-        console.log(values);
+        const detail = editorRef.current.getDetail();
+
+        const { name, desc, price, category, _id } = values;
+
+        let pCategoryId, categoryId;
+        if (category.length === 1) {
+            pCategoryId = '0';
+            categoryId = category[0];
+        } else {
+            pCategoryId = category[0];
+            categoryId = category[1];
+        }
+
+        const result = await reqAdOrUpdatedProduct({
+            _id,
+            pCategoryId,
+            categoryId,
+            name,
+            desc,
+            price,
+            imgs,
+            detail
+        });
+
+        if(result.status === 0){
+            message.success(`Product ${_id ? 'updated' : 'added'} succedssfully!`);
+            history.goBack();
+        }else{
+            message.error(`${_id ? 'Update' : 'Add'} product failed!`);
+        }
     }
 
     const formItemLayout = {
@@ -146,7 +175,7 @@ export default function ProductAddUpdate() {
                     desc: state.desc,
                     price: state.price,
                     category: state.pCategoryId === '0' ? [state.categoryId] : [state.pCategoryId, state.categoryId],
-                    detail: state.detail,
+                    _id: state._id
                 }}
                 onFinish={onFinish}
             >
@@ -214,11 +243,12 @@ export default function ProductAddUpdate() {
                     <Cascader options={options} loadData={loadData} changeOnSelect />
                 </Item>
                 <Item name='image' label='Image'>
-                    <PicturesWall imgList={state.imgs} ref={imgListRef}/>
+                    <PicturesWall imgList={state.imgs} ref={imgListRef} />
                 </Item>
-                <Item name='detail' label='Detail'>
-                    <Input placeholder='Input Product Detail' />
+                <Item name='detail' label='Detail' labelCol={{ span: 2 }} wrapperCol={{ span: 18 }}>
+                    <RichTextEditor html={state.detail} ref={editorRef} />
                 </Item>
+                <Item name='_id' />
                 <Item>
                     <Button type='primary' htmlType="submit">Submit</Button>
                 </Item>

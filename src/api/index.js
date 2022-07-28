@@ -22,11 +22,13 @@ export const reqUpdateStatus = (productId, status) => ajax('/manage/product/upda
 
 export const reqProducts = (pageNum, pageSize) => ajax('/manage/product/list', { pageNum, pageSize }, GET);
 
-export const reqSearchProducts = ({ pageNum, pageSize, searchName, searchType }) => ajax('/manage/product/search', { 
-    pageNum, 
+export const reqSearchProducts = ({ pageNum, pageSize, searchName, searchType }) => ajax('/manage/product/search', {
+    pageNum,
     pageSize,
     [searchType]: searchName //searchType: productName / productDesc
 }, GET);
+
+export const reqAdOrUpdatedProduct = (product) => ajax(`/manage/product/${product._id ? 'update' : 'add'}`, product, POST);
 
 export const reqDeleteImg = (name) => ajax('/manage/img/delete', { name }, POST);
 
