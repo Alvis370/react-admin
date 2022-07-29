@@ -34,6 +34,10 @@ export const reqDeleteImg = (name) => ajax('/manage/img/delete', { name }, POST)
 
 export const reqRoles = () => ajax('/manage/role/list', null, GET);
 
+export const reqAddRole = (roleName) => ajax('/manage/role/add', { roleName }, POST);
+
+export const reqUpdateRole = (role) => ajax('/manage/role/update', role, POST);
+
 export const reqWeather = () => ajax('/weather', {}, GET);
 
 //json请求的接口请求函数

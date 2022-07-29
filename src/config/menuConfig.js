@@ -30,9 +30,9 @@ const menuList = [
         '/home',
         <HomeOutlined />,
         undefined,
-        '首页' 
+        '首页'
     ),
-    getItem('商品', 'sub1', <AppstoreOutlined />, [
+    getItem('商品', '/products', <AppstoreOutlined />, [
         getItem(
             (
                 <Link replace to='/category'>
@@ -55,7 +55,7 @@ const menuList = [
             undefined,
             '商品管理'
         )
-    ]),
+    ], '商品'),
     getItem(
         (
             <Link replace to='/user'>
@@ -78,7 +78,7 @@ const menuList = [
         undefined,
         '角色管理'
     ),
-    getItem('图形图表', 'sub2', <AreaChartOutlined />, [
+    getItem('图形图表', '/charts', <AreaChartOutlined />, [
         getItem(
             (
                 <Link replace to='/charts/bar'>
@@ -112,7 +112,7 @@ const menuList = [
             undefined,
             '饼图'
         )
-    ])
+    ], '图形图表')
 ];
 
 export default menuList;
