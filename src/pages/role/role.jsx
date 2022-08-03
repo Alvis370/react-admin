@@ -83,8 +83,12 @@ export default function Role() {
       message.success("Role permission changed successfully!");
       
       //todo 提问！！这里没发请求，翻页回来有数值，应该是起效了，但为什么翻页前没刷新？
-      setRole(Object.assign(role));
-      setRoles([...roles]);
+      setRole(JSON.parse(JSON.stringify(role)));
+      setRoles(JSON.parse(JSON.stringify(roles)));
+
+      // let newRole = role;
+      // roles.push(newRole);
+      // setRoles(roles);
 
       // getRoles();
       setAddSetAuthVisible(false);

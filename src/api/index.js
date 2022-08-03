@@ -38,6 +38,12 @@ export const reqAddRole = (roleName) => ajax('/manage/role/add', { roleName }, P
 
 export const reqUpdateRole = (role) => ajax('/manage/role/update', role, POST);
 
+export const reqUsers = () => ajax('/manage/user/list', null, GET);
+
+export const reqDeleteUser = (userId) => ajax('/manage/user/delete', { userId }, POST);
+
+export const reqUpdateUser = (user) => ajax('/manage/user/update', user, POST);
+
 export const reqWeather = () => ajax('/weather', {}, GET);
 
 //json请求的接口请求函数
