@@ -65,8 +65,8 @@ function LoginForm() {
           className="login-form"
           initialValues={{
             remember: true,
-            username: 'admin',
-            password: 'admin'
+            username: 'aaaa',
+            password: 'aaaa'
           }}
           onFinish={onFinish}
         >

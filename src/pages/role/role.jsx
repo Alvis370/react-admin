@@ -1,10 +1,12 @@
 import React from 'react';
 import { Card, Table, Button, Modal, Form, Input, Tree, message } from 'antd';
+import { useLocation, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { reqRoles, reqAddRole, reqUpdateRole } from '../../api';
 import { formItemLayout } from '../../constants';
 import menuList from '../../config/menuConfig';
 import memoryUtils from '../../utils/memoryUtils';
+import storageUtils from '../../utils/storageUtils';
 import { formatDate } from '../../utils/dateUtils';
 
 export default function Role() {
@@ -18,6 +20,9 @@ export default function Role() {
   const [form2] = Form.useForm();
 
   const treeMenuRef = React.createRef();
+
+  const location = useLocation();
+  const history = useHistory();
 
   const columns = [
     {
@@ -80,18 +85,25 @@ export default function Role() {
     const result = await reqUpdateRole(role);
 
     if (result.status === 0) {
-      message.success("Role permission changed successfully!");
-      
-      //todo 提问！！这里没发请求，翻页回来有数值，应该是起效了，但为什么翻页前没刷新？
-      setRole(JSON.parse(JSON.stringify(role)));
-      setRoles(JSON.parse(JSON.stringify(roles)));
+      message.success("Current user has changed roles. Login out automatically!");
 
-      // let newRole = role;
-      // roles.push(newRole);
-      // setRoles(roles);
-
-      // getRoles();
       setAddSetAuthVisible(false);
+      if (role._id === memoryUtils.user.role_id) {
+        storageUtils.removeUser();
+        memoryUtils.user = {};
+        history.replace("/login");
+      } else {
+        message.success("Role permission changed successfully!");
+
+        setRole(JSON.parse(JSON.stringify(role)));
+        setRoles(JSON.parse(JSON.stringify(roles)));
+
+        // let newRole = role;
+        // roles.push(newRole);
+        // setRoles(roles);
+
+        // getRoles();
+      }
     } else {
       message.error("Change role permission failed!");
     }
