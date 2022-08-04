@@ -155,6 +155,7 @@ export default function ProductHome() {
                 loading={isLoading}
                 rowKey='_id'
                 pagination={{
+                    current: pageNum,
                     defaultPageSize: PAGE_SIZE,
                     total: total,
                     showQuickJumper: true,
