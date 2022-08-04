@@ -1,0 +1,20 @@
+.product-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.product-detail .product-detail-left {
+  width: 200px;
+  font-size: 17px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+.product-detail .product-detail-right {
+  float: left;
+}
+.product-detail .product-detail-image {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}

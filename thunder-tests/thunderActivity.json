@@ -1,0 +1,433 @@
+[
+  {
+    "_id": "9ad08dad-c3d6-4ec1-b5ea-0243f1d93053",
+    "colId": "history",
+    "containerId": "",
+    "name": "community-open-weather-map.p.rapidapi.com?q=London,uk",
+    "url": "community-open-weather-map.p.rapidapi.com?q=London,uk",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-21T17:26:35.361Z",
+    "modified": "2022-07-21T17:26:35.587Z",
+    "headers": [
+      {
+        "name": "X-RapidAPI-Key",
+        "value": "https://lbs.amap.com/api/webservice/guide/api/ipconfig"
+      },
+      {
+        "name": "X-RapidAPI-Host",
+        "value": "community-open-weather-map.p.rapidapi.com"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "London,uk",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "0abdd297-d330-4f01-9e4f-93b02e702f02",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://community-open-weather-map.p.rapidapi.com?q=London,uk",
+    "url": "https://community-open-weather-map.p.rapidapi.com?q=London,uk",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-21T17:26:50.137Z",
+    "modified": "2022-07-21T17:27:50.734Z",
+    "headers": [
+      {
+        "name": "X-RapidAPI-Key",
+        "value": "https://lbs.amap.com/api/webservice/guide/api/ipconfig"
+      },
+      {
+        "name": "X-RapidAPI-Host",
+        "value": "community-open-weather-map.p.rapidapi.com"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "London,uk",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "39d97e64-3ff7-4225-b6bc-45be118ffa41",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://api.map.baidu.com/weather/v1/?district_id=511100&data_type=all&mcode=CE:F7:45:62:AE:78:28:68:A0:A5:6D:70:CD:DF:5B:7C:C5:B9:91:CF;com.mahao.leshan&output=json&ak=SrYlotSQCWdHHulPveAULFzFF9BjXE1C ———————————————— 版权声明：本文为CSDN博主「绯色月下、狂咲ノ绝」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。 原文链接：https://blog.csdn.net/qq_44820964/article/details/115608527",
+    "url": "http://api.map.baidu.com/weather/v1/?district_id=511100&data_type=all&mcode=CE:F7:45:62:AE:78:28:68:A0:A5:6D:70:CD:DF:5B:7C:C5:B9:91:CF;com.mahao.leshan&output=json&ak=SrYlotSQCWdHHulPveAULFzFF9BjXE1C ———————————————— 版权声明：本文为CSDN博主「绯色月下、狂咲ノ绝」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。 原文链接：https://blog.csdn.net/qq_44820964/article/details/115608527",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-21T17:33:33.377Z",
+    "modified": "2022-07-21T17:33:34.146Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "district_id",
+        "value": "511100",
+        "isPath": false
+      },
+      {
+        "name": "data_type",
+        "value": "all",
+        "isPath": false
+      },
+      {
+        "name": "mcode",
+        "value": "CE:F7:45:62:AE:78:28:68:A0:A5:6D:70:CD:DF:5B:7C:C5:B9:91:CF;com.mahao.leshan",
+        "isPath": false
+      },
+      {
+        "name": "output",
+        "value": "json",
+        "isPath": false
+      },
+      {
+        "name": "ak",
+        "value": "SrYlotSQCWdHHulPveAULFzFF9BjXE1C ———————————————— 版权声明：本文为CSDN博主「绯色月下、狂咲ノ绝」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。 原文链接：https://blog.csdn.net/qq_44820964/article/details/115608527",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "e60b602c-5f31-4618-a54b-5ab7302d989c",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://api.map.baidu.com/weather/v1/?district_id=511100&data_type=all&mcode=CE:F7:45:62:AE:78:28:68:A0:A5:6D:70:CD:DF:5B:7C:C5:B9:91:CF;com.mahao.leshan&output=json&ak=SrYlotSQCWdHHulPveAULFzFF9BjXE1C",
+    "url": "http://api.map.baidu.com/weather/v1/?district_id=511100&data_type=all&mcode=CE:F7:45:62:AE:78:28:68:A0:A5:6D:70:CD:DF:5B:7C:C5:B9:91:CF;com.mahao.leshan&output=json&ak=SrYlotSQCWdHHulPveAULFzFF9BjXE1C",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-21T17:33:53.761Z",
+    "modified": "2022-07-22T16:49:07.143Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "district_id",
+        "value": "511100",
+        "isPath": false
+      },
+      {
+        "name": "data_type",
+        "value": "all",
+        "isPath": false
+      },
+      {
+        "name": "mcode",
+        "value": "CE:F7:45:62:AE:78:28:68:A0:A5:6D:70:CD:DF:5B:7C:C5:B9:91:CF;com.mahao.leshan",
+        "isPath": false
+      },
+      {
+        "name": "output",
+        "value": "json",
+        "isPath": false
+      },
+      {
+        "name": "ak",
+        "value": "SrYlotSQCWdHHulPveAULFzFF9BjXE1C",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "9be694f2-4815-4e7e-8472-2f1272b37915",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/weather ",
+    "url": "http://localhost:5000/weather ",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-22T03:24:45.158Z",
+    "modified": "2022-07-22T03:53:55.618Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "308693c2-d4e3-45dc-b824-aa49333718ec",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/weather",
+    "url": "http://localhost:5000/weather",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-22T03:54:01.043Z",
+    "modified": "2022-07-22T03:54:01.632Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "d01321f7-049a-49ad-8fe1-b0d08342df9f",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://localhost:5000/manage/category/list?parentId=0",
+    "url": "https://localhost:5000/manage/category/list?parentId=0",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-22T17:59:42.548Z",
+    "modified": "2022-07-23T00:57:03.988Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "parentId",
+        "value": "0",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "10e1e976-0491-4241-bde1-0a0dc521a3d1",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/list?parentId=0",
+    "url": "http://localhost:5000/manage/img/upload",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-22T18:00:42.189Z",
+    "modified": "2022-07-27T13:45:43.771Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [],
+      "files": [
+        {
+          "name": "image",
+          "value": "..\\..\\..\\Pictures\\Saved Pictures\\avater.jpg"
+        }
+      ]
+    },
+    "tests": []
+  },
+  {
+    "_id": "0564f274-bd65-4020-a745-2fc6016513ff",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/add?categoryName=67778t68&parentId=0",
+    "url": "http://localhost:5000/manage/category/add?categoryName=67778t68&parentId=0",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-23T00:56:35.540Z",
+    "modified": "2022-07-23T00:56:43.844Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryName",
+        "value": "67778t68",
+        "isPath": false
+      },
+      {
+        "name": "parentId",
+        "value": "0",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "e93a513c-2f9b-45fc-b6c0-c9e0f328661a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/product/list?pageNum=1&pageSize=2",
+    "url": "http://localhost:5000/manage/product/list?pageNum=1&pageSize=2",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T07:44:11.296Z",
+    "modified": "2022-07-25T13:45:49.522Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "pageNum",
+        "value": "1",
+        "isPath": false
+      },
+      {
+        "name": "pageSize",
+        "value": "2",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "b5451013-8826-4e4c-a419-f54b795f11a5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=5e12b8bce31bb727e4b0e348",
+    "url": "http://localhost:5000/manage/category/info?categoryId=5e12b8bce31bb727e4b0e348",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:12:30.932Z",
+    "modified": "2022-07-25T12:18:57.501Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "5e12b8bce31bb727e4b0e348",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "a3f5a432-60a6-4f2b-8fa4-f8110e223865",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=5fc74b650dd9b10798413162",
+    "url": "http://localhost:5000/manage/category/info?categoryId=5fc74b650dd9b10798413162",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:19:56.525Z",
+    "modified": "2022-07-25T12:30:18.159Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "5fc74b650dd9b10798413162",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "4f094f6a-c709-453e-8c4c-ea3255f1739c",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=62db4c0fa482462b10758c36",
+    "url": "http://localhost:5000/manage/category/info?categoryId=62db4c0fa482462b10758c36",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:20:05.637Z",
+    "modified": "2022-07-25T12:28:44.718Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "62db4c0fa482462b10758c36",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "9ac227b9-26df-48a4-a161-6124d113453a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=62db4c22a482462b10758c37",
+    "url": "http://localhost:5000/manage/category/info?categoryId=62db4c22a482462b10758c37",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:20:28.494Z",
+    "modified": "2022-07-25T12:20:28.514Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "62db4c22a482462b10758c37",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "c1a82a85-81ab-4850-83f9-6a99284cc765",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/category/info?categoryId=5e13467e3ed02518b4db0cd8",
+    "url": "http://localhost:5000/manage/category/info?categoryId=5e13467e3ed02518b4db0cd8",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-07-25T12:21:24.565Z",
+    "modified": "2022-07-25T12:25:43.861Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "categoryId",
+        "value": "5e13467e3ed02518b4db0cd8",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "f6e745bc-ac4a-4102-b21c-10418101749a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/product/updateStatus?productId=5e12b97de31bb727e4b0e349&status=2",
+    "url": "http://localhost:5000/manage/product/updateStatus?productId=5e12b97de31bb727e4b0e349&status=2",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-25T12:41:09.472Z",
+    "modified": "2022-07-25T12:41:09.507Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "productId",
+        "value": "5e12b97de31bb727e4b0e349",
+        "isPath": false
+      },
+      {
+        "name": "status",
+        "value": "2",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "81183196-28bb-433b-bc0c-bf0ad61bae49",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/product/updateStatus?productId=5e12b97de31bb727e4b0e349&status=1",
+    "url": "http://localhost:5000/manage/product/updateStatus?productId=5e12b97de31bb727e4b0e349&status=1",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-25T13:11:08.829Z",
+    "modified": "2022-07-25T13:13:02.469Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "productId",
+        "value": "5e12b97de31bb727e4b0e349",
+        "isPath": false
+      },
+      {
+        "name": "status",
+        "value": "1",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "45e91e77-1b71-4c98-9f42-a88f045218fa",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/manage/role/list",
+    "url": "http://localhost:5000/manage/role/add?name=neo",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-28T19:50:08.533Z",
+    "modified": "2022-07-29T17:10:01.966Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "name",
+        "value": "neo",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  }
+]
