@@ -43,6 +43,7 @@ function LoginForm() {
       const user = result.data;
       memoryUtils.user = user; // 保存在内存中
       storageUtils.saveUser(user); //save to localStorage
+      storageUtils.removeIndex();
 
       history.replace("/");
     } else {

@@ -1,6 +1,7 @@
 import store from 'store';
 
 const USER_KEY = 'user_key';
+const INDEX_KEY = 'index_key';
 
 const storageUtils = {
     saveUser(user) {
@@ -16,7 +17,19 @@ const storageUtils = {
     removeUser() {
         // localStorage.removeItem(USER_KEY);
         store.remove(USER_KEY);
-    }
+    },
+
+    saveIndex(path){
+        store.set(INDEX_KEY, path);
+    },
+
+    getIndex() {
+        return store.get(INDEX_KEY) || '/home';
+    },
+
+    removeIndex() {
+        store.remove(INDEX_KEY);
+    },
 }
 
 export default storageUtils;

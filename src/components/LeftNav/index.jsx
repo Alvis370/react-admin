@@ -1,14 +1,28 @@
 import React from 'react';
 import { Menu } from 'antd';
 import { useLocation, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { changeHeadTitle } from '../../redux/index-slice';
 import './index.less';
 import logo from '../../assets/images/logo.png';
+import menuList from '../../config/menuConfig';
 import menuConfig from '../../config/menuConfig';
 import memoryUtils from '../../utils/memoryUtils';
+import storageUtils from '../../utils/storageUtils';
 
 export default function LeftNav() {
+
     const location = useLocation();
     let path = location.pathname;
+
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        // Anything in here is fired on component mount.
+        changeHeaderIndex(storageUtils.getIndex());
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const getOpenKey = () => {
         let openKey = '';
@@ -21,6 +35,29 @@ export default function LeftNav() {
         });
 
         return openKey;
+    }
+
+    function changeHeaderIndex(path) {
+        if (path === undefined || path.length === 0) {
+            return;
+        }else{
+            storageUtils.saveIndex(path);
+        }
+
+        let title = '';
+        menuList.find(item => {
+            if (item.key === path) {
+                title = item.title;
+            } else if (item.children) {
+                const cItem = item.children.find(cItem => path.indexOf(cItem.key) === 0)
+                if (cItem) {
+                    title = cItem.title;
+                }
+            }
+            return undefined;
+        });
+
+        dispatch(changeHeadTitle(title));
     }
 
     function getItem(label, key, icon, children, title) {
@@ -66,7 +103,7 @@ export default function LeftNav() {
                     let cItemArr = [];
 
                     item.children.map(child => {
-                        if(username === 'admin' || menu.indexOf(child.key) !== -1){
+                        if (username === 'admin' || menu.indexOf(child.key) !== -1) {
                             cItemArr.push(getItem(
                                 (
                                     <Link replace to={child.key}>
@@ -77,9 +114,9 @@ export default function LeftNav() {
                                 child.icon,
                                 undefined, //child does not have any more children
                                 child.title
-                            )); 
+                            ));
                         }
-                        
+
                         return undefined;
                     });
 
@@ -130,6 +167,7 @@ export default function LeftNav() {
                 mode="inline"
                 theme="dark"
                 items={getAuthMenuConfig()}
+                onSelect={e => changeHeaderIndex(e.key)}
             />
         </div>
     )
