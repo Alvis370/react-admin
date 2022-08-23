@@ -1,14 +1,12 @@
 import React from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Modal, Button } from 'antd';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteUser } from '../../redux/user-slice';
 import './index.less';
-import { reqWeather } from '../../api/index';
+// import { reqWeather } from '../../api/index';
 import { formatDate } from '../../utils/dateUtils';
-import memoryUtils from '../../utils/memoryUtils';
-import storageUtils from '../../utils/storageUtils';
-import menuList from '../../config/menuConfig';
 
 const Header = () => {
 
@@ -17,12 +15,11 @@ const Header = () => {
     const [weather, setWeather] = React.useState('Sunny');
     const [timeTag, setTimeTag] = React.useState();
 
-    const username = memoryUtils.user.username;
-    const location = useLocation();
     const history = useHistory();
 
+    const { user } = useSelector(state => state.userReducer);
     const { index } = useSelector(state => state.indexReducer);
-
+    const dispatch = useDispatch();
 
     React.useEffect(() => {
         // Anything in here is fired on component mount.
@@ -75,8 +72,7 @@ const Header = () => {
             // content: 'Some descriptions',
 
             onOk() {
-                storageUtils.removeUser();
-                memoryUtils.user = {};
+                dispatch(deleteUser());
                 history.replace("/login");
             }
         });
@@ -85,7 +81,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header-top">
-                <span>Welcome, {username}</span>
+                <span>Welcome, {user.username}</span>
                 <Button type="link" onClick={showConfirm}>Logout</Button>
             </div>
             <div className="header-bottom">

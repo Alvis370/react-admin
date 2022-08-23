@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory, Route, Switch, Redirect } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import { Layout } from 'antd';
-import memoryUtils from '../../utils/memoryUtils';
 import LeftNav from '../../components/LeftNav';
 import Header from '../../components/Header';
 import Home from '../home/home';
@@ -18,9 +18,9 @@ const { Footer, Sider, Content } = Layout;
 export default function Admin() {
   const history = useHistory();
 
-  function getUser() {
-    const user = memoryUtils.user;
+  const { user } = useSelector(state => state.userReducer);
 
+  function getUser() {
     if (!user || !user._id) {
       history.replace("/login");
     }

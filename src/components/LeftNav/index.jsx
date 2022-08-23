@@ -1,13 +1,12 @@
 import React from 'react';
 import { Menu } from 'antd';
 import { useLocation, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { changeHeadTitle } from '../../redux/index-slice';
 import './index.less';
 import logo from '../../assets/images/logo.png';
 import menuList from '../../config/menuConfig';
 import menuConfig from '../../config/menuConfig';
-import memoryUtils from '../../utils/memoryUtils';
 import storageUtils from '../../utils/storageUtils';
 
 export default function LeftNav() {
@@ -15,6 +14,7 @@ export default function LeftNav() {
     const location = useLocation();
     let path = location.pathname;
 
+    const { user } = useSelector(state => state.userReducer);
     const dispatch = useDispatch();
 
     React.useEffect(() => {
@@ -98,8 +98,8 @@ export default function LeftNav() {
                         item.title
                     );
 
-                    const menu = memoryUtils.user.role.menus;
-                    const username = memoryUtils.user.username;
+                    const menu = user.role.menus;
+                    const username = user.username;
                     let cItemArr = [];
 
                     item.children.map(child => {
@@ -134,8 +134,8 @@ export default function LeftNav() {
 
     const hasAuth = item => {
         const key = item.key;
-        const menu = memoryUtils.user.role.menus;
-        const username = memoryUtils.user.username;
+        const menu = user.role.menus;
+        const username = user.username;
 
         if (username === 'admin' || key === '/home' || menu.indexOf(key) !== -1) {
             return true;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Table, Button, Modal, Form, Input, Tree, message } from 'antd';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteUser } from '../../redux/user-slice';
 import PropTypes from 'prop-types';
 import { reqRoles, reqAddRole, reqUpdateRole } from '../../api';
 import { formItemLayout } from '../../constants';
 import menuList from '../../config/menuConfig';
-import memoryUtils from '../../utils/memoryUtils';
-import storageUtils from '../../utils/storageUtils';
 import { formatDate } from '../../utils/dateUtils';
 
 export default function Role() {
@@ -21,8 +21,11 @@ export default function Role() {
 
   const treeMenuRef = React.createRef();
 
-  const location = useLocation();
+  // const location = useLocation();
   const history = useHistory();
+
+  const { user } = useSelector(state => state.userReducer);
+  const dispatch = useDispatch();
 
   const columns = [
     {
@@ -79,7 +82,7 @@ export default function Role() {
       //menu has changed
       role.menus = treeMenuRef.current;
       role.auth_time = Date.now();
-      role.auth_name = memoryUtils.user.username;
+      role.auth_name = user.username;
     }
 
     const result = await reqUpdateRole(role);
@@ -88,9 +91,8 @@ export default function Role() {
       message.success("Current user has changed roles. Login out automatically!");
 
       setAddSetAuthVisible(false);
-      if (role._id === memoryUtils.user.role_id) {
-        storageUtils.removeUser();
-        memoryUtils.user = {};
+      if (role._id === user.role_id) {
+        dispatch(deleteUser());
         history.replace("/login");
       } else {
         message.success("Role permission changed successfully!");
