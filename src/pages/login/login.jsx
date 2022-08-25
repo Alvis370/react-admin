@@ -15,14 +15,19 @@ export default function Login() {
   const { user } = useSelector(state => state.userReducer);
   const dispatch = useDispatch();
 
-  const getUser = () => {
+  React.useEffect(() => {
     if (user && user._id) {
       history.replace("/");
-      return false;
     }
+  });
 
-    return true;
-  }
+  // const getUser = () => {
+  //   if (user && user._id) {
+  //     history.replace("/");
+  //     return false;
+  //   }
+  //   return true;
+  // }
 
   const onFinish = async (values) => {
     const { username, password } = values;
@@ -37,7 +42,7 @@ export default function Login() {
       dispatch(saveUser(resUser));
 
       storageUtils.removeIndex();
-      history.replace("/");
+      // history.replace("/");
     } else {
       //Login failed 
       message.error(result.msg);
@@ -46,7 +51,8 @@ export default function Login() {
 
   return (
     <div style={{ height: '100%' }}>
-      {getUser() && <LoginForm finish={onFinish} />}
+      {/* {getUser() && <LoginForm finish={onFinish} />} */}
+      <LoginForm finish={onFinish} />
     </div>
   )
 }
