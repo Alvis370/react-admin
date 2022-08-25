@@ -41,7 +41,7 @@ export default function LeftNav() {
         if (path === undefined || path.length === 0) {
             return;
         }else{
-            storageUtils.saveIndex(path);
+            storageUtils.saveIndex(path); //if this is saved in redux store, it won't work when the web page is manually refreshed
         }
 
         let title = '';
