@@ -12,6 +12,7 @@ import Role from '../role/role';
 import Bar from '../charts/bar';
 import Line from '../charts/line';
 import Pie from '../charts/pie';
+import NotFound from '../not-found/not-found';
 
 const { Footer, Sider, Content } = Layout;
 
@@ -46,6 +47,7 @@ function AdminLayout() {
         <Header />
         <Content style={{ margin: "20px", backgroundColor: 'white' }}>
           <Switch>
+            <Redirect exact from='/' to="/home" />
             <Route path="/home" component={Home} />
             <Route path="/category" component={Category} />
             <Route path="/product" component={Product} />
@@ -54,7 +56,7 @@ function AdminLayout() {
             <Route path="/charts/bar" component={Bar} />
             <Route path="/charts/line" component={Line} />
             <Route path="/charts/pie" component={Pie} />
-            <Redirect to="/home" />
+            <Route component={NotFound} />
           </Switch>
         </Content>
         <Footer style={{ textAlign: 'center', color: '#ccc' }}>Use Google Chrome to get optimized experience.</Footer>
